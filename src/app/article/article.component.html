@@ -1,0 +1,17 @@
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <div class="card" style="width: 18rem;">
+                <img [src]="photo" alt="" width="280px" class="card-img-top">
+                 <div class="card-body">
+                     <h5 class="card-title">{{comment}}</h5>
+                     <p>{{commentaires}}</p>
+                     <input type="text"[(ngModel)]="commentaires">
+                     <a href="#" class="btn btn-primary" (click)="addLike()">tester</a>
+                     <span class="card-text">{{like}}</span>
+                 </div>
+             </div>
+        </div>
+    </div>
+</div>
