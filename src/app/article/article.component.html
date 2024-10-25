@@ -1,4 +1,4 @@
- <div class="col mt-3 ms-3">
+ <div class="col mt-3 ms-5">
     <div class="card shadow" style="width: 18rem;">
         <img [src]="photo" alt="" width="230px" height="220px" class="card-img-top">
          <div class="card-body">
@@ -11,7 +11,8 @@
              </div>
              <span class="card-text">{{like}}</span>
              <h5> {{prix}} </h5>
-             <h6> {{dispo}} </h6>
+             <h6 *ngIf="dispo==true"> disponible </h6>
+             <h6 *ngIf="dispo==false"> indisponible </h6>
          </div>
 </div>
  </div>

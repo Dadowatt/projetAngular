@@ -1,10 +1,11 @@
+import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-article',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule,CommonModule],
   templateUrl: './article.component.html',
   styleUrl: './article.component.css'
 })
@@ -15,7 +16,7 @@ export class ArticleComponent {
   like: number = 0;
   commentaires = "texte initial"
   @Input()prix:number = 0;
-  @Input()dispo: boolean = true;
+  @Input()dispo: boolean = false;
   
   public addLike(){
     this.like++;
@@ -27,5 +28,6 @@ export class ArticleComponent {
     }
 
   }
+
 
 }
