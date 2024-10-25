@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -9,13 +9,23 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './article.component.css'
 })
 export class ArticleComponent {
-
   @Input()comment="";
+  @Output()info = new EventEmitter<string>();
+  @Input()photo="";
   like: number = 0;
-  photo = "/assets/tof.png"
-  commentaires = "texet initial"
+  commentaires = "texte initial"
+  @Input()prix:number = 0;
+  @Input()dispo: boolean = true;
+  
   public addLike(){
     this.like++;
+    this.info.emit(this.comment)
+  }
+  disLike(){
+    if(this.like > 0){
+      this.like--;
+    }
+
   }
 
 }
