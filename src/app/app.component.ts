@@ -15,7 +15,6 @@ import { CommonModule } from '@angular/common';
 export class AppComponent {
   title = 'firstProject';
   message="";
-
   produits = [
     { comment: "velo", prix: 15000, dispo: false, photo: "assets/1.jpg" },
     { comment: "voiture", prix: 15000, dispo: true, photo: "assets/2.jpg" },

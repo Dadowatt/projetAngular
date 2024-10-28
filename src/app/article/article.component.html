@@ -7,12 +7,12 @@
              <input type="text"[(ngModel)]="commentaires">
              <div class="d-flex">
                 <a href="#" class="btn btn-info mt-2 mx-2" (click)="addLike()">Like</a>
-             <a href="#" class="btn btn-info mt-2 mx-2" (click)="disLike()">Like</a>
+                <a href="#" class="btn btn-info mt-2 mx-2" (click)="disLike()">Like</a>
              </div>
              <span class="card-text">{{like}}</span>
              <h5> {{prix}} </h5>
-             <h6 *ngIf="dispo==true"> disponible </h6>
-             <h6 *ngIf="dispo==false"> indisponible </h6>
+             <h6 *ngIf="dispo==true" class="text-success"> disponible </h6>
+             <h6 *ngIf="dispo==false" class="text-danger"> indisponible </h6>
          </div>
 </div>
  </div>

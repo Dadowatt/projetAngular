@@ -26,8 +26,5 @@ export class ArticleComponent {
     if(this.like > 0){
       this.like--;
     }
-
   }
-
-
 }
