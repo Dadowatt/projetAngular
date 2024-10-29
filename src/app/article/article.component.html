@@ -1,19 +1,21 @@
- <div class="col mt-3 ms-5">
-    <div class="card shadow" style="width: 18rem;">
-        <img [src]="photo" alt="" width="230px" height="220px" class="card-img-top">
-         <div class="card-body">
-             <h5 class="card-title">{{comment}}</h5>
-             <p>{{commentaires}}</p>
-             <input type="text"[(ngModel)]="commentaires">
-             <div class="d-flex">
-                <a href="#" class="btn btn-info mt-2 mx-2" (click)="addLike()">Like</a>
-                <a href="#" class="btn btn-info mt-2 mx-2" (click)="disLike()">Like</a>
+
+    <div class="d-flex wrap">
+        <div class="card shadow m-3" style="width: 18rem;" *ngFor="let produit of produits">
+            <img [src]="produit.photo" alt="" width="230px" height="220px" class="card-img-top">
+             <div class="card-body">
+                 <h5 class="card-title">{{produit.comment}}</h5>
+                 <p>{{produit.prix}}</p>
+                 <!-- <input type="text"[(ngModel)]="commentaires"> -->
+                 <!-- <div class="d-flex">
+                    <a href="#" class="btn btn-info mt-2 mx-2" (click)="addLike()">Like</a>
+                    <a href="#" class="btn btn-info mt-2 mx-2" (click)="disLike()">Like</a>
+                 </div> -->
+                 <!-- <span class="card-text">{{like}}</span> -->
+                 <!-- <h5> {{prix}} </h5> -->
+                 <h6 *ngIf="produit.dispo==true" class="text-success"> disponible </h6>
+                 <h6 *ngIf="produit.dispo==false" class="text-danger"> indisponible </h6>
              </div>
-             <span class="card-text">{{like}}</span>
-             <h5> {{prix}} </h5>
-             <h6 *ngIf="dispo==true" class="text-success"> disponible </h6>
-             <h6 *ngIf="dispo==false" class="text-danger"> indisponible </h6>
-         </div>
-</div>
- </div>
+    </div>
+     </div>
+
        

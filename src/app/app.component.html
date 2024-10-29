@@ -1,32 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <div class="container-fluid">
-        <app-nav/>
-        <div class="row">
-            <div class="col-md-2">
-            <app-sidebar/>
-        </div>
-        
-        <div class="col-md-10">
-            <div class="message"> {{message}} </div>
+<app-nav></app-nav>
 
-                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-                    <app-article *ngFor="let produit of produits"
-                     [comment]="produit.comment"
-                      [photo]="produit.photo"
-                       (info)="onAffiche($event)"
-                        [prix]="produit.prix"
-                        [dispo]="produit.dispo" />
-                </div>
-            </div>
-    </div>
+<div class="d-flex">
+<div>
+    <app-sidebar></app-sidebar> 
+</div>
+<div class="flex-grow-1">
+    <router-outlet></router-outlet>
+</div>
 </div>
 
-</body>
-</html>
+
+
