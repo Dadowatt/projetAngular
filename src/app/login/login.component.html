@@ -1,29 +1,41 @@
 
-<div class="container" (submit)="OnSubmit($event)" style="max-width: 23rem;">
-    <form class="form-control m-auto shadow p-3 mb-5 bg-body-tertiary rounded py-4 mt-5" style="height: 25rem;">
+<div class="container" style="max-width: 23rem;">
+    <form [formGroup]="FormGroup" (submit)="OnSubmit($event)" class="form-control m-auto shadow p-3 mb-5 bg-body-tertiary rounded py-4 mt-5" style="height: 25rem;">
         <h1 class="text-primary text-center">Login</h1>
         <div class="mb-3">
           <label for="" class="form-label">Email address</label>
-          <input type="email" class="form-control" id="" aria-describedby="emailHelp"
-           [formControl]="username">
-           @if(username.invalid &&(username.dirty || username.touched)){
+          <input type="email" class="form-control" id="" aria-describedby="emailHelp" name="username" formControlName="username">
+          
+           </div>
+           <!-- @if(username.invalid &&(username.dirty || username.touched)){
             <div class="error">
               le username ne doit pas être vide
             </div>
-           }
+           } -->
+
+           <div *ngIf="FormGroup.get('username')?.invalid && (FormGroup.get('username')?.dirty || FormGroup.get('username')?.touched)" class="text-danger">
+            <div *ngIf="FormGroup.get('username')?.errors?.['required']">
+             le nom d'utilisateur est obligatoire
+            </div>
+            <div *ngIf="FormGroup.get('username')?.errors?.['minlength']">
+             le nom doit contenir au minimum 3 caractères
+            </div>
+            <div *ngIf="FormGroup.get('username')?.errors?.['maxlength']">
+             le nom ne doit pas dépasser 20 caractères
+            </div>
           
         </div>
         <div class="mb-3">
           <label for="" class="form-label">Password</label>
-          <input type="text" class="form-control" id="" [formControl]="password">
-          @if(password.invalid &&(password.dirty || password.touched)){
+          <input type="text" class="form-control" id="" formControlName="password" name="password">
+          <!-- @if(password.invalid &&(password.dirty || password.touched)){
             <div class="error">
               le password ne doit pas être vide
             </div>
-           }
+           } -->
         </div>
         <div class="mb-3 text-center mt-4">
-            <button type="submit" class="btn btn-primary w-100">login</button>
+            <button type="submit" class="btn btn-primary w-100" [disabled]="FormGroup.invalid">login</button>
           
         </div>
         <div class="d-flex justify-content-between fw-bold mt-4">
