@@ -1,10 +1,11 @@
 
 <div class="container" style="max-width: 23rem;">
-    <form [formGroup]="FormGroup" (submit)="OnSubmit($event)" class="form-control m-auto shadow p-3 mb-5 bg-body-tertiary rounded py-4 mt-5" style="height: 25rem;">
+    <form [formGroup]="FormGroup" (submit)="OnSubmit($event)"
+     class="form-control m-auto shadow p-3 mb-5 bg-body-tertiary rounded py-4 mt-5" style="height: 25rem;">
         <h1 class="text-primary text-center">Login</h1>
         <div class="mb-3">
           <label for="" class="form-label">Email address</label>
-          <input type="email" class="form-control" id="" aria-describedby="emailHelp" name="username" formControlName="username">
+          <input type="email" class="form-control" id="" name="username" formControlName="username">
           
            </div>
            <!-- @if(username.invalid &&(username.dirty || username.touched)){
@@ -13,7 +14,8 @@
             </div>
            } -->
 
-           <div *ngIf="FormGroup.get('username')?.invalid && (FormGroup.get('username')?.dirty || FormGroup.get('username')?.touched)" class="text-danger">
+           <div *ngIf="FormGroup.get('username')?.invalid && (FormGroup.get('username')?.dirty || FormGroup.get('username')?.touched)"
+            class="text-danger">
             <div *ngIf="FormGroup.get('username')?.errors?.['required']">
              le nom d'utilisateur est obligatoire
             </div>

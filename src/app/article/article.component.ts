@@ -3,7 +3,6 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ProduitsService } from '../services/produits.service';
 
-
 @Component({
   selector: 'app-article',
   standalone: true,
@@ -11,12 +10,13 @@ import { ProduitsService } from '../services/produits.service';
   templateUrl: './article.component.html',
   styleUrl: './article.component.css'
 })
+
 export class ArticleComponent implements OnInit{
   produits: any []=[];
   constructor(
     private produitservice: ProduitsService
-  ){
-  }
+  ){}
+  
   ngOnInit(): void {
       this.produitservice.getproducts().subscribe((data:any)=>{
         this.produits = data

@@ -1,0 +1,21 @@
+<div class="container mt-4 w-75">
+    <table class="table">
+        <thead>
+            <tr>
+              <th scope="col">name</th>
+              <th scope="col">avatar</th>
+              <th scope="col">ville</th>
+              <th scope="col">sex</th>
+            </tr>
+          </thead>
+          <tbody class="table-group-divider">
+            <tr *ngFor="let utilisateur of utilisateurs">
+              <th scope="row">{{utilisateur.name}}</th>
+              <td><img [src]="utilisateur.avatar" alt="" style="width: 100px;"></td>
+              <td>{{utilisateur.ville}}</td>
+              <td>{{utilisateur.sex}}</td>
+            </tr>
+          
+          </tbody>
+    </table>
+</div>
